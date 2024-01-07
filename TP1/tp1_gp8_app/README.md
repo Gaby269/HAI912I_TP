@@ -1,4 +1,4 @@
-# tp1_profile_card_app
+# tp1_gp8_app
 
 A new Flutter project.
 
