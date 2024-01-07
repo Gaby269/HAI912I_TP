@@ -3,7 +3,7 @@
 TP1 et TP2 réalisés dans le cadre de la matière HAI912I - Développement embarqué et IoT. Ainsi, vous y trouverez le code, le rapport ainsi qu'une vidéo de démonstration de chacun dans :
 
 * [TP1 - Les bases de Flutter](TP1)
-* [TP2 - Focntionalités avancées](TP2)
+* [TP2 - Fonctionalités avancées](TP2)
 
 
 ## Méthodes
