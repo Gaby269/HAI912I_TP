@@ -1,4 +1,4 @@
-# HAI912I TP Groupe 8 - Application Flutter
+# HAI912I TPs Groupe 8 - Application Flutter
 
 TP1 et TP2 réalisés dans le cadre de la matière HAI912I - Développement embarqué et IoT. Ainsi, vous y trouverez le code, le rapport ainsi qu'une vidéo de démonstration de chacun dans :
 
