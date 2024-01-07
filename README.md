@@ -1,16 +1,18 @@
 # HAI912I TP Groupe 8 - Application Flutter
 
-Ce repository contient les 2 premiers TP qui était à réaliser dans le cadre de la matière HAI912I - Developpement embarqué et IoT. Ainsi, vous y trouverez le code, le rapport ainsi qu'une vidéo de démonstration de chacun dans :
+TP1 et TP2 réalisés dans le cadre de la matière HAI912I - Développement embarqué et IoT. Ainsi, vous y trouverez le code, le rapport ainsi qu'une vidéo de démonstration de chacun dans :
 
 * [TP1 - Les bases de Flutter](TP1)
 * [TP2 - Focntionalités avancées](TP2)
 
 
-## Méthodes 
+## Méthodes
 
 1. Dézipper le dossier
 
 ### sur VSCode
+
 2. Retrouver les dépendances avec `flutter pub get`
-3. Connecter votre apareil à votre ordinateur ou utiliser un émulateur en ligne
+3. Connecter votre appareil à votre ordinateur ou utiliser un émulateur en ligne
 4. Lancer le projet avec `flutter run`
+
