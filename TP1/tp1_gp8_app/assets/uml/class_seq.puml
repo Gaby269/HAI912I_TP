@@ -1,0 +1,36 @@
+@startuml
+actor User as Player
+participant MyApp as App
+participant MyHomePage as Home
+participant QuizzPage as Quizz
+participant QuizzPageState as QuizzState
+participant ProfilePage as Profil
+
+Player -> App: Open the app
+activate App
+
+Player -> App: Navigate to Home
+App -> Home: Display Home Page
+activate Home
+
+Player -> Home: Click on Quizz Button
+Home -> App: Navigate to QuizzPage
+deactivate Home
+
+App -> Quizz: Start Quizz
+activate Quizz
+
+Quizz -> QuizzState: Display Question
+activate QuizzState
+
+Player -> QuizzState: Answer Question
+QuizzState -> Quizz: Check Answer
+deactivate QuizzState
+
+Quizz --> App: Quizz Complete
+deactivate Quizz
+
+Player -> App: Navigate to Profile
+App -> Profil: Display Profile Page
+deactivate App
+@enduml
