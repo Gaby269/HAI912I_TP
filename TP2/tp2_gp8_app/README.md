@@ -1,4 +1,4 @@
-# tp2_appli_meteo
+# tp2_gp8_app
 
 A new Flutter project.
 
