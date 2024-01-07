@@ -1,0 +1,101 @@
+@startuml
+set namespaceSeparator ::
+
+class "screens::weather_model.dart::WeatherModel" {
+  +String? cod
+  +int? message
+  +int? cnt
+  +List<WeatherList>? list
+  +City? city
+  +Map<String, dynamic> toJson()
+}
+
+"screens::weather_model.dart::WeatherModel" o-- "screens::weather_model.dart::City"
+
+class "screens::weather_model.dart::WeatherList" {
+  +int? dt
+  +Main? main
+  +List<WeatherData>? weather
+  +Clouds? clouds
+  +Wind? wind
+  +int? visibility
+  +num? pop
+  +Sys? sys
+  +String? dtTxt
+  +Rain? rain
+  +Map<String, dynamic> toJson()
+}
+
+"screens::weather_model.dart::WeatherModel" o-- "screens::weather_model.dart::WeatherList"
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::WeatherData"
+
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::Main"
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::Clouds"
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::Wind"
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::Sys"
+"screens::weather_model.dart::WeatherList" o-- "screens::weather_model.dart::Rain"
+
+class "screens::weather_model.dart::Main" {
+  +num? temp
+  +num? feelsLike
+  +num? tempMin
+  +num? tempMax
+  +int? pressure
+  +int? seaLevel
+  +int? grndLevel
+  +int? humidity
+  +num? tempKf
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::WeatherData" {
+  +int? id
+  +String? main
+  +String? description
+  +String? icon
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::Clouds" {
+  +int? all
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::Wind" {
+  +num? speed
+  +int? deg
+  +num? gust
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::Sys" {
+  +String? pod
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::Rain" {
+  +num? d3h
+  +Map<String, dynamic> toJson()
+}
+
+class "screens::weather_model.dart::City" {
+  +int? id
+  +String? name
+  +Coord? coord
+  +String? country
+  +int? population
+  +int? timezone
+  +int? sunrise
+  +int? sunset
+  +Map<String, dynamic> toJson()
+}
+
+"screens::weather_model.dart::City" o-- "screens::weather_model.dart::Coord"
+
+class "screens::weather_model.dart::Coord" {
+  +num? lat
+  +num? lon
+  +Map<String, dynamic> toJson()
+}
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+actor User as Player
+participant MyApp as App
+participant MyHomePage as Home
+participant QuizzCubit as QuizzCubit
+participant QuizzProvider as QuizzProvider
+participant ResultatPage as Resultat
+participant WeatherPage as Weather
+
+Player -> App: Open the app
+activate App
+
+Player -> App: Navigate to Home
+App -> Home: Display Home Page
+activate Home
+
+Player -> Home: Click on Quizz Button
+Home -> App: Navigate to QuizzPage
+deactivate Home
+
+App -> QuizzCubit: Create QuizzCubit
+activate QuizzCubit
+App -> QuizzProvider: Create QuizzProvider
+activate QuizzProvider
+App -> QuizzCubit: Display QuizzPage
+QuizzCubit -> QuizzCubit: Load quiz questions
+Player -> QuizzCubit: Answer the quiz questions
+QuizzCubit -> QuizzCubit: Check answers and update score
+Player -> QuizzCubit: Finish the quiz
+QuizzCubit -> QuizzProvider: Save quiz results
+QuizzProvider --> QuizzCubit: Confirmation
+QuizzCubit --> QuizzCubit: Update score and results
+deactivate QuizzCubit
+
+App -> ResultatPage: Display ResultatPage
+activate Resultat
+
+Player -> ResultatPage: View quiz results
+Resultat --> App: Navigate back to Home
+deactivate Resultat
+
+App -> WeatherPage: Navigate to WeatherPage
+activate Weather
+
+Player -> WeatherPage: View weather information
+Weather --> App: Navigate back to Home
+deactivate Weather
+@enduml

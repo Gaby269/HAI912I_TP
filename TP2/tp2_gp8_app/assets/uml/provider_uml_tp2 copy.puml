@@ -1,0 +1,29 @@
+@startuml
+set namespaceSeparator ::
+
+class "screens::quizz_provider.dart::QuizProvider" {
+  -List<QuestionState> _questions
+  -int _indexQuestion
+  -int _score
+  +int indexQuestion
+  +int score
+  +List<QuestionState> questions
+  +void checkAnswer()
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "screens::quizz_provider.dart::QuizProvider"
+
+class "screens::quizz_provider.dart::QuizzPageProvider" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "screens::quizz_provider.dart::QuizzPageProvider"
+
+class "screens::quizz_provider.dart::QuizzPageStateProvider" {
+  -Container _getPhoto()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "screens::quizz_provider.dart::QuizzPageStateProvider"
+
+@enduml

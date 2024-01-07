@@ -1,0 +1,34 @@
+@startuml
+set namespaceSeparator ::
+
+class "screens::weather.dart::Network" {
+  +String apiKey
+  +dynamic getWeather()
+}
+
+class "screens::weather.dart::WeatherPage" {
+  +_WeatherPageState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "screens::weather.dart::WeatherPage"
+
+class "screens::weather.dart::_WeatherPageState" {
+  -TextEditingController _cityController
+  -Network _network
+  -dynamic _weatherDataFuture
+  +List<Map<String, dynamic>>? futureDayData
+  +Widget build()
+  -dynamic _fetchWeatherData()
+  -String _formattedDate()
+  -String _formattedTime()
+  +double convertMphToKph()
+  +List<Map<String, dynamic>> processWeatherData()
+  +Widget getWeatherIcon()
+  +String capitalize()
+}
+
+"screens::weather.dart::_WeatherPageState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"screens::weather.dart::_WeatherPageState" o-- "screens::weather.dart::Network"
+"flutter::src::widgets::framework.dart::State" <|-- "screens::weather.dart::_WeatherPageState"
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+set namespaceSeparator ::
+
+class "main.dart::MyApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "main.dart::MyApp"
+
+class "main.dart::MyHomePage" {
+  +Widget build()
+}
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator ::
+
+class "screens::quizz_cubit.dart::QuizEvent" {
+}
+
+class "screens::quizz_cubit.dart::NextQuestionEvent" {
+}
+
+"screens::quizz_cubit.dart::QuizEvent" <|-- "screens::quizz_cubit.dart::NextQuestionEvent"
+
+class "screens::quizz_cubit.dart::QuizCubit" {
+  -List<QuestionState> _questions
+  -int _indexQuestion
+  -int _score
+  +void checkAnswer()
+}
+
+"bloc::src::bloc.dart::Cubit" <|-- "screens::quizz_cubit.dart::QuizCubit"
+
+class "screens::quizz_cubit.dart::QuizzPageCubit" {
+  +List<QuestionState> questions
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "screens::quizz_cubit.dart::QuizzPageCubit"
+
+class "screens::quizz_cubit.dart::QuizzPageStateCubit" {
+  +List<QuestionState> questions
+  -Container _getPhoto()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "screens::quizz_cubit.dart::QuizzPageStateCubit"
+
+@enduml
